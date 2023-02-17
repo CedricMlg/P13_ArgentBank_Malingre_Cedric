@@ -1,23 +1,23 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 export default function Home() {
   return (
     <div>
-      {" "}
       <nav className="main-nav">
-        <a className="main-nav-logo" href="./index.html">
+        <NavLink className="main-nav-logo" to="/">
           <img
             className="main-nav-logo-image"
             src="./img/argentBankLogo.png"
             alt="Argent Bank Logo"
           />
           <h1 className="sr-only">Argent Bank</h1>
-        </a>
+        </NavLink>
         <div>
-          <a className="main-nav-item" href="./sign-in.html">
+          <NavLink className="main-nav-item" to="/sign-in">
             <i className="fa fa-user-circle"></i>
             Sign In
-          </a>
+          </NavLink>
         </div>
       </nav>
       <main>
@@ -27,7 +27,9 @@ export default function Home() {
             <p className="subtitle">No fees.</p>
             <p className="subtitle">No minimum deposit.</p>
             <p className="subtitle">High interest rates.</p>
-            <p className="text">Open a savings account with Argent Bank today!</p>
+            <p className="text">
+              Open a savings account with Argent Bank today!
+            </p>
           </section>
         </div>
         <section className="features">
@@ -50,7 +52,9 @@ export default function Home() {
               alt="Chat Icon"
               className="feature-icon"
             />
-            <h3 className="feature-item-title">More savings means higher rates</h3>
+            <h3 className="feature-item-title">
+              More savings means higher rates
+            </h3>
             <p>
               The more you save with us, the higher your interest rate will be!
             </p>
