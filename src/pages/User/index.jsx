@@ -2,6 +2,7 @@ import React from "react";
 import { useQuery } from "react-query";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
+import logo from "../../assets/argentBankLogo.png"
 
 export default function User() {
   // const { data, isLoading, error } = useQuery("users", async () => {
@@ -26,7 +27,7 @@ export default function User() {
             <NavLink className="main-nav-logo" to="/">
               <img
                 className="main-nav-logo-image"
-                src="./img/argentBankLogo.png"
+                src={logo}
                 alt="Argent Bank Logo"
               />
               <h1 className="sr-only">Argent Bank</h1>

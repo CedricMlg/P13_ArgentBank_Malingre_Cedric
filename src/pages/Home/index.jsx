@@ -1,5 +1,9 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import logo from "../../assets/argentBankLogo.png"
+import iconChat from "../../assets/icon-chat.png"
+import iconMoney from "../../assets/icon-money.png"
+import iconSecurity from "../../assets/icon-security.png"
 
 export default function Home() {
   return (
@@ -8,7 +12,7 @@ export default function Home() {
         <NavLink className="main-nav-logo" to="/">
           <img
             className="main-nav-logo-image"
-            src="./img/argentBankLogo.png"
+            src={logo}
             alt="Argent Bank Logo"
           />
           <h1 className="sr-only">Argent Bank</h1>
@@ -36,7 +40,7 @@ export default function Home() {
           <h2 className="sr-only">Features</h2>
           <div className="feature-item">
             <img
-              src="./img/icon-chat.png"
+              src={iconChat}
               alt="Chat Icon"
               className="feature-icon"
             />
@@ -48,7 +52,7 @@ export default function Home() {
           </div>
           <div className="feature-item">
             <img
-              src="./img/icon-money.png"
+              src={iconMoney}
               alt="Chat Icon"
               className="feature-icon"
             />
@@ -61,7 +65,7 @@ export default function Home() {
           </div>
           <div className="feature-item">
             <img
-              src="./img/icon-security.png"
+              src={iconSecurity}
               alt="Chat Icon"
               className="feature-icon"
             />

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useMutation } from "react-query";
 import axios from "axios";
+import logo from "../../assets/argentBankLogo.png"
 
 export default function SignIn() {
   const [CheckEmail, setCheckEmail] = useState("");
@@ -40,7 +41,7 @@ export default function SignIn() {
         <NavLink className="main-nav-logo" to="/">
           <img
             className="main-nav-logo-image"
-            src="./img/argentBankLogo.png"
+            src={logo}
             alt="Argent Bank Logo"
           />
           <h1 className="sr-only">Argent Bank</h1>
