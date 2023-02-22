@@ -1,13 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useMutation } from "react-query";
+import { useDispatch } from "react-redux";
 import axios from "axios";
-import logo from "../../assets/argentBankLogo.png"
+import logo from "../../assets/argentBankLogo.png";
+import * as storeActions from "../../features/StoreToken";
 
 export default function SignIn() {
   const [CheckEmail, setCheckEmail] = useState("");
   const [CheckPassword, setCheckPassword] = useState("");
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const { mutate } = useMutation(
     async () => {
@@ -17,8 +20,9 @@ export default function SignIn() {
       });
     },
     {
-      onSuccess: () => {
+      onSuccess: (res) => {
         navigate("/user");
+        dispatch(storeActions.store(res.data.body.token));
       },
       onError: (err) => {
         console.log(err.response?.data || err);
