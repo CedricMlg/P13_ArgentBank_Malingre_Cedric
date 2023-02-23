@@ -6,6 +6,7 @@ import iconMoney from "../../assets/icon-money.png"
 import iconSecurity from "../../assets/icon-security.png"
 
 export default function Home() {
+  localStorage.clear();
   return (
     <div>
       <nav className="main-nav">

@@ -1,8 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = {
-  token: null,
-};
+const initialState = {};
 
 const { actions, reducer } = createSlice({
   name: "storeToken",

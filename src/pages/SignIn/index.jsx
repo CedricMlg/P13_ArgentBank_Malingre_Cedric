@@ -7,16 +7,16 @@ import logo from "../../assets/argentBankLogo.png";
 import * as storeActions from "../../features/StoreToken";
 
 export default function SignIn() {
-  const [CheckEmail, setCheckEmail] = useState("");
-  const [CheckPassword, setCheckPassword] = useState("");
+  const [checkEmail, setCheckEmail] = useState("");
+  const [checkPassword, setCheckPassword] = useState("");
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const { mutate } = useMutation(
     async () => {
       return await axios.post(`http://localhost:3001/api/v1/user/login`, {
-        email: CheckEmail,
-        password: CheckPassword,
+        email: checkEmail,
+        password: checkPassword,
       });
     },
     {
@@ -67,7 +67,7 @@ export default function SignIn() {
               <input
                 type="text"
                 id="username"
-                value={CheckEmail}
+                value={checkEmail}
                 onChange={(e) => setCheckEmail(e.target.value)}
               />
             </div>
@@ -76,7 +76,7 @@ export default function SignIn() {
               <input
                 type="password"
                 id="password"
-                value={CheckPassword}
+                value={checkPassword}
                 onChange={(e) => setCheckPassword(e.target.value)}
               />
             </div>

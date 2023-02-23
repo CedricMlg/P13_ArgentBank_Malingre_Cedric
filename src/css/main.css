@@ -259,6 +259,21 @@ body {
   padding: 10px;
 }
 
+.edit-buttons button {
+  width: 90px;
+  margin: 0 8px;
+  padding: 4px 0;
+  border-radius: 3px;
+  border-color: #5257ec77;
+  color: #5256EC;
+}
+
+.edit-form input {
+  border-radius: 3px;
+  padding: 8px;
+  margin: 8px;
+}
+
 .header {
   color: #fff;
   margin-bottom: 2rem;

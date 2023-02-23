@@ -7,4 +7,13 @@ export const store = configureStore({
   },
 });
 
+store.subscribe(() => {
+  saveState(store.getState());
+});
+
+function saveState(state) {
+  const formatedState = JSON.stringify(state);
+  localStorage.setItem('store', formatedState)
+}
+
 export default store;
