@@ -213,6 +213,13 @@ definitions:
       lastName:
         type: string
         description: user last name
+  UserProfile:
+    type: object
+    properties:
+      firstName:
+        type: string
+      lastName:
+        type: string
   Login:
     properties:
       email:
@@ -221,52 +228,16 @@ definitions:
       password:
         type: string
         description: user password
-  ApiResponse:
-    type: object
-    properties:
-      status:
-        type: integer
-      message:
-        type: string
-      body:
-        type: object
-        properties:
-          id:
-            type: string
-          email:
-            type: string
   LoginResponse:
     type: object
     properties:
       token:
-        type: string
-  UserProfile:
-    type: object
-    properties:
-      firstName:
-        type: string
-      lastName:
         type: string
   Transaction:
     properties:
       id:
         type: string
         description: user transaction id
-  SummaryResponse:
-    type: object
-    properties:
-      status:
-        type: integer
-      message:
-        type: string
-      body:
-        properties:
-          checkings:
-            type: number
-          savings:
-            type: number
-          card:
-            type: number
   TransactionResponse:
     type: object
     properties:
@@ -279,7 +250,7 @@ definitions:
       description:
         type: string
         description: transaction description
-      furtherInformation:
+      transactionInformations:
         type: object
         description: object containing the type, category and note of the transaction
         example:
@@ -297,7 +268,7 @@ definitions:
         amount: number,
         date: string,
         description: string,
-        furtherInformation: object,
+        transactionInformations: object,
         id: string,
       }
   MonthlyTransactionsResponse:
@@ -310,9 +281,37 @@ definitions:
           amount: number,
           date: string,
           description: string,
-          furtherInformation: object,
+          transactionInformations: object,
           id: string,
         },
-        {},
       ]
     description: current month transactions
+  SummaryResponse:
+    type: object
+    properties:
+      status:
+        type: integer
+      message:
+        type: string
+      body:
+        properties:
+          checkings:
+            type: number
+          savings:
+            type: number
+          card:
+            type: number
+  ApiResponse:
+    type: object
+    properties:
+      status:
+        type: integer
+      message:
+        type: string
+      body:
+        type: object
+        properties:
+          id:
+            type: string
+          email:
+            type: string
