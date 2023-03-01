@@ -19,6 +19,10 @@ export default function User() {
       window.location.reload();
     }
     const token = Object.values(store.token);
+    /**
+     * I'm using axios to make a post request to my backend server, and then I'm setting the state of
+     * my React app to the data I get back from the server.
+     */
     async function getUserDataLoad() {
       const response = await axios.post(
         `http://localhost:3001/api/v1/user/profile`,
@@ -38,6 +42,7 @@ export default function User() {
     getUserDataLoad();
   }, []);
 
+/* It's a mutation hook that I'm using to make a put request to my backend server. */
   const { mutate } = useMutation(
     async () => {
       return await axios.put(
@@ -60,6 +65,11 @@ export default function User() {
     }
   );
 
+  /**
+   * "SendData" is a function that takes an event as an argument and prevents the default action of the
+   * event. Then, it tries to call the mutate function. If it fails, it logs the error. Finally, it
+   * sets the state of editName to false.
+   */
   function SendData(event) {
     event.preventDefault();
     try {

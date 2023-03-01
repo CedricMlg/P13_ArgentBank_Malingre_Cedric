@@ -14,7 +14,7 @@ const root = createRoot(container);
 
 const queryClient = new QueryClient();
 
-/* Rendering the React app to the DOM. */
+/* Rendering the app. */
 root.render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>

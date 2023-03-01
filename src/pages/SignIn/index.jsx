@@ -12,6 +12,7 @@ export default function SignIn() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
+/* A hook that is used to make a request to the server. */
   const { mutate } = useMutation(
     async () => {
       return await axios.post(`http://localhost:3001/api/v1/user/login`, {
@@ -30,6 +31,10 @@ export default function SignIn() {
     }
   );
 
+/**
+ * CheckData() is a function that prevents the default action of the event, and then calls the mutate()
+ * function.
+ */
   function CheckData(event) {
     event.preventDefault();
     try {
