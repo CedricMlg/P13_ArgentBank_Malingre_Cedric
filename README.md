@@ -1,6 +1,6 @@
 # P13_ArgentBank_Malingre_Cedric
 
-This codebase contains the code needed to run the backend for Argent Bank.
+This codebase contains the code needed to run the Argent Bank app.
 
 <!-- GETTING STARTED -->
 ## Getting Started
