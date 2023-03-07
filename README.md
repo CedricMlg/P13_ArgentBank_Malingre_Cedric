@@ -1,49 +1,52 @@
-# Project #10 - Argent Bank API
+# P13_ArgentBank_Malingre_Cedric
 
-This codebase contains the code needed to run the backend for Argent Bank.
-
+<!-- GETTING STARTED -->
 ## Getting Started
 
+To get a local copy up and running follow these simple example steps.
+
 ### Prerequisites
+
+* yarn
+  ```sh
+  npm install --global yarn
+  ```
 
 Argent Bank uses the following tech stack:
 
 - [Node.js v12](https://nodejs.org/en/)
 - [MongoDB Community Server](https://www.mongodb.com/try/download/community)
 
-Please make sure you have the right versions and download both packages. You can verify this by using the following commands in your terminal:
+Please make sure you have the right versions and download both packages.
 
-```bash
-# Check Node.js version
-node --version
+### Installation
 
-# Check Mongo version
-mongo --version
-```
+1. Clone the repo
+   ```sh
+   git clone https://github.com/CedricMlg/P13_ArgentBank_Malingre_Cedric
+   ```
+2. Install packages
+   ```sh
+   yarn
+   ```
+3. Start local dev server
+   ```js
+   yarn dev:server
+   ```
+4. (in another terminal) Launch project
+   ```js
+   yarn dev
+   ```
 
-### Instructions
+Your server should now be running at http://locahost:3001 and you will have two users in your MongoDB database!
 
-1. Fork this repo
-1. Clone the repo onto your computer
-1. Open a terminal window in the cloned project
-1. Run the following commands:
+## API Documentation
 
-```bash
-# Install dependencies
-npm install
-
-# Start local dev server
-npm run dev:server
-
-# Populate database with two users
-npm run populate-db
-```
-
-Your server should now be running at http://locahost:3001 and you will now have two users in your MongoDB database!
+To learn more about how the API works, once you have started your local server, you can visit: http://localhost:3001/api-docs
 
 ## Populated Database Data
 
-Once you run the `populate-db` script, you should have two users in your database:
+You should have two users in the database, here is the default values of the two users, you'll need email and password to signup :
 
 ### Tony Stark
 
@@ -58,15 +61,3 @@ Once you run the `populate-db` script, you should have two users in your databas
 - Last Name: `Rogers`,
 - Email: `steve@rogers.com`,
 - Password: `password456`
-
-## API Documentation
-
-To learn more about how the API works, once you have started your local environment, you can visit: http://localhost:3001/api-docs
-
-## Design Assets
-
-Static HTML and CSS has been created for most of the site and is located in: `/designs`.
-
-For some of the dynamic features, like toggling user editing, there is a mock-up for it in `/designs/wireframes/edit-user-name.png`.
-
-And for the API model that you will be proposing for transactitons, the wireframe can be found in `/designs/wireframes/transactions.png`.
