@@ -1,24 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { useMutation } from "react-query";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import axios from "axios";
 import logo from "../../assets/argentBankLogo.png";
 
 export default function User() {
-  const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(true);
   const [editName, setEditName] = useState(false);
   const [userFName, setUserFName] = useState();
   const [userLName, setUserLName] = useState();
   const localStore = localStorage.getItem("store");
+  const store = JSON.parse(localStore);
+  const token = Object.values(store.token);
 
   useEffect(() => {
-    const store = JSON.parse(localStore);
-    if (store === null) {
-      navigate("/");
-      window.location.reload();
-    }
-    const token = Object.values(store.token);
     /**
      * I'm using axios to make a post request to my backend server, and then I'm setting the state of
      * my React app to the data I get back from the server.
