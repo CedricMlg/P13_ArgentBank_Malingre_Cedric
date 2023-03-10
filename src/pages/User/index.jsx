@@ -37,7 +37,7 @@ export default function User() {
     getUserDataLoad();
   }, []);
 
-/* It's a mutation hook that I'm using to make a put request to my backend server. */
+  /* It's a mutation hook that I'm using to make a put request to my backend server. */
   const { mutate } = useMutation(
     async () => {
       return await axios.put(
@@ -72,6 +72,27 @@ export default function User() {
     } catch (err) {
       console.log(err);
     }
+    setEditName(false);
+  }
+
+/**
+ * It's a function that makes a post request to the server, and then sets the state of the component to
+ * the data that was returned from the server.
+ */
+  async function CancelData(event) {
+    event.preventDefault();
+    const response = await axios.post(
+      `http://localhost:3001/api/v1/user/profile`,
+      {},
+      {
+        headers: {
+          Authorization: `Bearer ${token[0]}`,
+        },
+      }
+    );
+    const userData = response.data.body;
+    setUserFName(userData.firstName);
+    setUserLName(userData.lastName);
     setEditName(false);
   }
 
@@ -122,7 +143,7 @@ export default function User() {
                   </div>
                   <div className="edit-buttons">
                     <button onClick={SendData}>Save</button>
-                    <button onClick={() => setEditName(false)}>Cancel</button>
+                    <button onClick={CancelData}>Cancel</button>
                   </div>
                 </div>
               ) : (
